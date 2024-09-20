@@ -9,5 +9,16 @@ import { MaterialModule } from '../material.module';
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent {
-
+  user: User = {
+    name: '',
+    email: '',
+    age: null,
+    bio: '',
+  }
+}
+interface User {
+  name: string;
+  email: string;
+  age: number | null;
+  bio: string;
 }
