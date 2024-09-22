@@ -1,24 +1,24 @@
-<form action="">
+<form>
   <!-- Nome -->
   <mat-form-field appearance="outline">
     <mat-label>Nome</mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]="userService.user.name" name="name">
   </mat-form-field>
 
   <!-- Email -->
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]="userService.user.email" name="email">
   </mat-form-field>
 
   <!-- Età -->
   <mat-form-field appearance="outline">
     <mat-label>Età</mat-label>
-    <input matInput>
+    <input matInput type="number" [(ngModel)]="userService.user.age" name="age">
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Bio</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="userService.user.bio" name="bio"></textarea>
   </mat-form-field>
 </form>

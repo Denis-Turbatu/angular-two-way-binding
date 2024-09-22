@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MaterialModule } from '../material.module';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,17 +9,11 @@ import { MaterialModule } from '../material.module';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })
-export class ProfileComponent {
-  user: User = {
-    name: '',
-    email: '',
-    age: null,
-    bio: '',
+export class ProfileComponent implements OnInit {
+  constructor(public userService: UserService) { }
+
+  ngOnInit(): void {
+    // You can access the user data here
+    console.log(this.userService.user);
   }
-}
-interface User {
-  name: string;
-  email: string;
-  age: number | null;
-  bio: string;
 }
